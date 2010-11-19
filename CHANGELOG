@@ -1,0 +1,14 @@
+Loggable - a simple log4j meta-library
+Copyright (C) 2010  Daniele Di Bernardo
+=======================================
+ CHANGELOG
+=======================================
+
+v. 1.0.2
+  - FIX: A bug in the LoggerContainer class caused a NullPointerException under certain (rare) circumstances
+
+v. 1.0.1
+  - FIX: A bug in the LoggerContainer class caused a stack overflow when calling Log.get()
+
+v. 1.0
+  - First official release
