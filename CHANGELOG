@@ -4,6 +4,9 @@ Copyright (C) 2010  Daniele Di Bernardo
  CHANGELOG
 =======================================
 
+v. 1.0.3
+  - FIX: A bug in the LoggerContainer class caused an endless loop when asking for a void logger or the root logger
+
 v. 1.0.2
   - FIX: A bug in the LoggerContainer class caused a NullPointerException under certain (rare) circumstances
 
