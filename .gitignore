@@ -1,0 +1,6 @@
+.DS_Store
+build
+*.jar
+
+# Local file for project compilation
+make.sh

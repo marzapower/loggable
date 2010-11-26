@@ -30,7 +30,7 @@ import com.marzapower.loggable.Loggable.LogLevel;
  * be used by the application classes
  * 
  * @author Daniele Di Bernardo
- * @version 1.0.2
+ * @version 1.0.3
  * 
  */
 @Loggable(exclude = true)
@@ -124,7 +124,6 @@ public class LoggerContainer {
 	 * @return a void logger
 	 */
 	public static Logger getVoidLogger() {
-		Log.get().debug("Retrieving a void Logger");
 		return instances.get(null);
 	}
 
@@ -134,7 +133,6 @@ public class LoggerContainer {
 	 * @return the log4j root logger
 	 */
 	public static Logger getRootLogger() {
-		Log.get().debug("Retrieving the root logger");
 		return instances.get(ROOT_LOGGER);
 	}
 

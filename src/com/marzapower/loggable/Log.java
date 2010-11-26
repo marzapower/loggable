@@ -28,7 +28,7 @@ import org.apache.log4j.Logger;
  * instance directly for logging purposes
  * 
  * @author Daniele Di Bernardo
- * @version 1.0.2
+ * @version 1.0.3
  * 
  */
 @Loggable(exclude = true)
