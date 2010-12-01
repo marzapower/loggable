@@ -30,7 +30,7 @@ import com.marzapower.loggable.Loggable.LogLevel;
  * be used by the application classes
  * 
  * @author Daniele Di Bernardo
- * @version 1.0.3
+ * @version 1.0.4
  * 
  */
 @Loggable(exclude = true)
@@ -39,15 +39,13 @@ public class LoggerContainer {
 	private static Map<String, Logger> instances;
 	private static final String VOID_LOGGER = "";
 	private static final String ROOT_LOGGER = Object.class.getCanonicalName();
-	
-	static {
-		instances = new HashMap<String, Logger>();
-	}
 
 	/**
 	 * Loads in memory the void logger instance and the root logger instance
 	 */
 	static {
+		instances = new HashMap<String, Logger>();
+		
 		Logger logger = Logger.getLogger(VOID_LOGGER);
 		logger.setLevel(Level.OFF);
 		instances.put(null, logger);
