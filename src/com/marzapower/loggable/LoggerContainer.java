@@ -46,12 +46,12 @@ public class LoggerContainer {
 	static {
 		instances = new HashMap<String, Logger>();
 		
-		Logger logger = Logger.getLogger(VOID_LOGGER);
-		logger.setLevel(Level.OFF);
-		instances.put(null, logger);
+		Logger voidLogger = Logger.getLogger(VOID_LOGGER);
+		voidLogger.setLevel(Level.OFF);
+		instances.put(null, voidLogger);
 
-		logger = Logger.getRootLogger();
-		instances.put(ROOT_LOGGER, logger);
+		Logger rootLogger = Logger.getRootLogger();
+		instances.put(ROOT_LOGGER, rootLogger);
 	}
 
 	/**
