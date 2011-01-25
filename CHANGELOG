@@ -4,6 +4,10 @@ Copyright (C) 2010  Daniele Di Bernardo
  CHANGELOG
 =======================================
 
+v. 1.1.0
+  - NEW: A class without the Loggable annotation will log in the default class-named logger
+  - FIX: A tweak in the code will prevent a strange NullPointerException in the LoggerContainer class
+
 v. 1.0.3
   - FIX: A bug in the LoggerContainer class caused an endless loop when asking for a void logger or the root logger
 

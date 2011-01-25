@@ -33,7 +33,7 @@ import org.apache.log4j.Logger;
  * despite of the global log4j settings.
  * 
  * @author Daniele Di Bernardo
- * @version 1.0.4
+ * @version 1.1.0
  * 
  */
 @Documented

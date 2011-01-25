@@ -30,7 +30,7 @@ import com.marzapower.loggable.Loggable.LogLevel;
  * be used by the application classes
  * 
  * @author Daniele Di Bernardo
- * @version 1.0.4
+ * @version 1.1.0
  * 
  */
 @Loggable(exclude = true)
@@ -48,7 +48,7 @@ public class LoggerContainer {
 		
 		Logger voidLogger = Logger.getLogger(VOID_LOGGER);
 		voidLogger.setLevel(Level.OFF);
-		instances.put(null, voidLogger);
+		instances.put(VOID_LOGGER, voidLogger);
 
 		Logger rootLogger = Logger.getRootLogger();
 		instances.put(ROOT_LOGGER, rootLogger);
@@ -78,6 +78,11 @@ public class LoggerContainer {
 	 *         adapted as required by the annotation
 	 */
 	protected static Logger getInstance(Class<?> clazz, Loggable annotation) {
+		// This control avoids a strange NullPointerException when calling this method
+		if (instances == null) {
+			instances = new HashMap<String, Logger>();
+		}
+		
 		Logger logger = instances.get(clazz);
 
 		if (logger == null) {
@@ -148,7 +153,12 @@ public class LoggerContainer {
 	 */
 	private static Logger createNewLoggerFor(Class<?> clazz, Loggable annotation) {
 		Logger logger = Logger.getLogger(clazz);
-		return implementLogic(logger, annotation);
+		
+		if (annotation == null) {
+			return logger;
+		} else {
+			return implementLogic(logger, annotation);
+		}
 	}
 
 	/**
