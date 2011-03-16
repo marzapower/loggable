@@ -28,7 +28,7 @@ import org.apache.log4j.Logger;
  * instance directly for logging purposes
  * 
  * @author Daniele Di Bernardo
- * @version 1.1.0
+ * @version 1.2.0
  * 
  */
 @Loggable(exclude = true)
@@ -132,6 +132,9 @@ public class Log {
 	 */
 	private static Logger getLogger(Loggable annotation, Class<?> clazz) {
 		if (annotation == null)
+			return LoggerContainer.getInstance(clazz);
+		
+		if (annotation.root())
 			return LoggerContainer.getRootLogger();
 
 		if (annotation.exclude())

@@ -30,7 +30,7 @@ import com.marzapower.loggable.Loggable.LogLevel;
  * be used by the application classes
  * 
  * @author Daniele Di Bernardo
- * @version 1.1.0
+ * @version 1.2.0
  * 
  */
 @Loggable(exclude = true)
@@ -58,6 +58,19 @@ public class LoggerContainer {
 	 * All methods of the class should be accessed in a static way
 	 */
 	private LoggerContainer() {
+	}
+	
+	/**
+	 * Given a class returns a {@link Logger} instance with its default configuration.
+	 *
+	 * @param clazz
+	 *            the {@link Class} object that links to the caller class
+	 *
+	 * @return a {@link Logger} instance suitable for <code>clazz</code>,
+	 *         with its default configuration
+	 */
+	protected static Logger getInstance(Class<?> clazz) {
+		return getInstance(clazz, null);
 	}
 
 	/**

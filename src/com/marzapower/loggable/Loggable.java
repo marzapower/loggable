@@ -33,7 +33,7 @@ import org.apache.log4j.Logger;
  * despite of the global log4j settings.
  * 
  * @author Daniele Di Bernardo
- * @version 1.1.0
+ * @version 1.2.0
  * 
  */
 @Documented
@@ -59,6 +59,13 @@ public @interface Loggable {
 	 */
 	boolean exclude() default false;
 
+	
+	/**
+	 * This parameter defines if the class should log through the root logger,
+	 * despite all the other specific parameters
+	 */
+	boolean root() default false;
+	
 	/**
 	 * This parameter defines the default log level required for logging. If
 	 * {@link LogLevel#LOG4J} is passed, the class will log with the default log
@@ -71,7 +78,7 @@ public @interface Loggable {
 	 * {@link Loggable} annotation
 	 * 
 	 * @author Daniele Di Bernardo
-	 * @version 1.0
+	 * @version 1.2.0
 	 * 
 	 */
 	public enum LogLevel {
